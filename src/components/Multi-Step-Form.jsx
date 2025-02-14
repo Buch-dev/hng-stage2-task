@@ -173,6 +173,7 @@ export default function MultiStepForm() {
             {/* Next button */}
             <div className="flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-6 mt-8 font-jeju">
                 <Button
+                type={'submit'}
                   children={"Cancel"}
                   className={
                     "bg-[#041E23] text-[#24A0B5] border border-[#0E464F] w-full md:w-[270px] h-[48px] rounded-xl cursor-pointer hover:text-[#FFF] hover:bg-[#24A0B5] transition-all"

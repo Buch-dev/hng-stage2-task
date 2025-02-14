@@ -9,6 +9,7 @@ const Button = ({
   disabled,
   style,
   onClick,
+  type,
   ...props
 }) => {
   return (
@@ -18,6 +19,7 @@ const Button = ({
       disabled={disabled}
       style={style}
       onClick={onClick}
+      type={type}
     >
       {children}
       {withArrow && <TicsArrowSvgIcon fill={''} className='' />}
