@@ -43,6 +43,7 @@ export default function MultiStepForm() {
       newErrors.ticketNo = "Number of tickets must be at least 1";
     }
     setErrors(newErrors);
+    console.log("Validation errors:", newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
