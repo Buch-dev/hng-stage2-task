@@ -67,8 +67,12 @@ export default function MultiStepForm() {
 
   const handleNextStep = (e) => {
     e.preventDefault();
+    console.log("Next button clicked");
     if (validateForm()) {
+      console.log("Validation passed");
       setStep(step + 1);
+    } else {
+      console.log("Validation failed", errors);
     }
   };
 
@@ -124,7 +128,7 @@ export default function MultiStepForm() {
                     <p className="text-sm font-roboto">20/52</p>
                   </div>
                   <div className="price flex items-center justify-end font-semibold text-2xl font-roboto">
-                  $50
+                    $50
                   </div>
                 </button>
                 <button
@@ -137,7 +141,7 @@ export default function MultiStepForm() {
                     <p className="text-sm font-roboto">20/52</p>
                   </div>
                   <div className="price flex items-center justify-end font-semibold text-2xl font-roboto">
-                  $150
+                    $150
                   </div>
                 </button>
               </div>
@@ -172,20 +176,21 @@ export default function MultiStepForm() {
 
             {/* Next button */}
             <div className="flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-6 mt-8 font-jeju">
-                <Button
-                type={'submit'}
-                  children={"Cancel"}
-                  className={
-                    "bg-[#041E23] text-[#24A0B5] border border-[#0E464F] w-full md:w-[270px] h-[48px] rounded-xl cursor-pointer hover:text-[#FFF] hover:bg-[#24A0B5] transition-all"
-                  }
-                />
-                <Button
-                  children={"Next"}
-                  className={
-                    "bg-[#041E23] text-[#24A0B5] border border-[#0E464F] hover:text-[#FFF] hover:bg-[#24A0B5] w-full md:w-[270px] h-[48px] rounded-xl cursor-pointer transition-all"
-                  }
-                />
-              </div>
+              <Button
+                type={"submit"}
+                children={"Cancel"}
+                className={
+                  "bg-[#041E23] text-[#24A0B5] border border-[#0E464F] w-full md:w-[270px] h-[48px] rounded-xl cursor-pointer hover:text-[#FFF] hover:bg-[#24A0B5] transition-all"
+                }
+              />
+              <Button
+                type={"submit"}
+                children={"Next"}
+                className={
+                  "bg-[#041E23] text-[#24A0B5] border border-[#0E464F] hover:text-[#FFF] hover:bg-[#24A0B5] w-full md:w-[270px] h-[48px] rounded-xl cursor-pointer transition-all"
+                }
+              />
+            </div>
           </form>
         )}
         {step === 2 && (
@@ -271,27 +276,29 @@ export default function MultiStepForm() {
 
             {/* Next button */}
             <div className="flex flex-col md:flex-row gap-4 items-center justify-between md:gap-6 mt-8 font-jeju">
-                <Button
-                  onClick={handlePrevStep}
-                  children={"Back"}
-                  className={
-                    "bg-[#041E23] text-[#24A0B5] border border-[#0E464F] w-full md:w-[270px] h-[48px] rounded-xl cursor-pointer hover:text-[#FFF] hover:bg-[#24A0B5] transition-all"
-                  }
-                />
-                <Button
-                  children={"Get my Free Ticket"}
-                  className={
-                    "bg-[#041E23] text-[#24A0B5] border border-[#0E464F] hover:text-[#FFF] hover:bg-[#24A0B5] w-full md:w-[270px] h-[48px] rounded-xl cursor-pointer transition-all"
-                  }
-                />
-              </div>
+              <Button
+                onClick={handlePrevStep}
+                children={"Back"}
+                className={
+                  "bg-[#041E23] text-[#24A0B5] border border-[#0E464F] w-full md:w-[270px] h-[48px] rounded-xl cursor-pointer hover:text-[#FFF] hover:bg-[#24A0B5] transition-all"
+                }
+              />
+              <Button
+                children={"Get my Free Ticket"}
+                className={
+                  "bg-[#041E23] text-[#24A0B5] border border-[#0E464F] hover:text-[#FFF] hover:bg-[#24A0B5] w-full md:w-[270px] h-[48px] rounded-xl cursor-pointer transition-all"
+                }
+              />
+            </div>
           </form>
         )}
 
         {step === 3 && (
           <div className="ticket text-white flex flex-col items-center">
             {/* Alatsi */}
-            <h2 className="text-[32px] mb-4 font-alatsi">Your Ticket is Booked!</h2>
+            <h2 className="text-[32px] mb-4 font-alatsi">
+              Your Ticket is Booked!
+            </h2>
             {/* Roboto */}
             <p className="text-base font-roboto">
               Check your email for a copy or you can download
@@ -370,7 +377,9 @@ export default function MultiStepForm() {
                   }
                 />
               </div>
-              <BarCode className={"absolute bottom-[10.5rem] md:bottom-[6.5rem]"} />
+              <BarCode
+                className={"absolute bottom-[10.5rem] md:bottom-[6.5rem]"}
+              />
             </div>
           </div>
         )}
