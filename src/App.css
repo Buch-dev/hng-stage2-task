@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Jeju+Myeongjo&family=Roboto:wght@400;700&display=swap');
+@import "tailwindcss";
+
+body {
+  background-color: #02191D;
+  padding: 1rem;
+}
+
+.font-jeju {
+  font-family: 'Jeju Myeongjo', serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-alatsi {
+  font-family: 'Alatsi', sans-serif;
+}
