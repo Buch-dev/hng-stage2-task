@@ -30,19 +30,25 @@ export default function MultiStepForm() {
 
   const validateForm = () => {
     const newErrors = {};
+    console.log("Validating form...");
+    console.log("fullName:", fullName);
+    console.log("email:", email);
+    console.log("ticketType:", ticketType);
+    console.log("ticketNo:", ticketNo);
+
     if (!ticketType) {
-        newErrors.ticketType = "Ticket type is required";
-      }
-      if (!ticketNo || ticketNo < 1) {
-        newErrors.ticketNo = "Number of tickets must be at least 1";
-      }
+      newErrors.ticketType = "Ticket type is required";
+    }
+    if (!ticketNo || ticketNo < 1) {
+      newErrors.ticketNo = "Number of tickets must be at least 1";
+    }
     if (!fullName) newErrors.fullName = "Full name is required";
     if (!email) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = "Email address is invalid";
     }
-    
+
     setErrors(newErrors);
     console.log("Validation errors:", newErrors);
     return Object.keys(newErrors).length === 0;
