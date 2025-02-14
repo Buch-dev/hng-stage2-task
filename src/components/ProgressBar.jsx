@@ -1,4 +1,3 @@
-// filepath: /c:/Users/LENOVO/Documents/task-2/conference-ticket/src/components/ProgressBar.jsx
 import React from "react";
 
 const ProgressBar = ({ currentStep, totalSteps }) => {
@@ -19,8 +18,12 @@ const ProgressBar = ({ currentStep, totalSteps }) => {
 
   return (
     <div className="flex flex-col items-center mb-5">
-      <div className="flex flex-col gap-1 md:gap-0 md:flex-row md:items-center md:justify-between text-white w-full">
-        <h3 className=" text-2xl md:text-[32px] font-jeju">
+      <div
+        className={`flex gap-1 md:gap-0 md:flex-row md:items-center justify-between text-white w-full ${
+          currentStep === 1 ? "flex-col" : "flex-row"
+        }`}
+      >
+        <h3 className="text-2xl md:text-[32px] font-jeju">
           {getStepText(currentStep)}
         </h3>
         <p className="text-base">

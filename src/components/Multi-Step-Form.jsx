@@ -20,6 +20,7 @@ export default function MultiStepForm() {
   const [ticketNo, setTicketNo] = useState(1);
   const [avatarUrl, setAvatarUrl] = useState("");
   const [previewUrl, setPreviewUrl] = useState("");
+  const [isSelected, setIsSelected] = useState(false);
 
   useEffect(() => {
     const savedAvatarUrl = localStorage.getItem("avatarUrl");
@@ -27,6 +28,10 @@ export default function MultiStepForm() {
       setAvatarUrl(savedAvatarUrl);
     }
   }, []);
+
+  const handleClick = () => {
+    setIsSelected(!isSelected);
+  };
 
   const validateForm = () => {
     const newErrors = {};
@@ -121,7 +126,11 @@ export default function MultiStepForm() {
                 <button
                   type="button"
                   onClick={() => setTicketType("REGULAR ACCESS")}
-                  className="border-2 border-[#07373F] rounded-2xl flex flex-col-reverse gap-3 justify-between p-2 hover:border hover:bg-[#2C545B] hover:border-[#197686] cursor-pointer transition-all w-full md:w-[158px]"
+                  className={`border-2 rounded-2xl flex flex-col-reverse gap-3 justify-between p-2 cursor-pointer transition-all w-full md:w-[158px] ${
+                    ticketType === "REGULAR ACCESS"
+                      ? "bg-[#12464E] border-[#197686]"
+                      : "border-[#07373F] hover:border hover:bg-[#2C545B] hover:border-[#197686]"
+                  }`}
                 >
                   <div className="flex flex-col items-start">
                     <p className="text-base font-roboto">REGULAR ACCESS</p>
@@ -134,7 +143,11 @@ export default function MultiStepForm() {
                 <button
                   type="button"
                   onClick={() => setTicketType("VIP ACCESS")}
-                  className="border-2 border-[#07373F] rounded-2xl flex flex-col-reverse gap-3 justify-between p-2 hover:border hover:bg-[#2C545B] hover:border-[#197686] cursor-pointer transition-all w-full md:w-[158px]"
+                  className={`border-2 rounded-2xl flex flex-col-reverse gap-3 justify-between p-2 cursor-pointer transition-all w-full md:w-[158px] ${
+                    ticketType === "VIP ACCESS"
+                      ? "bg-[#12464E] border-[#197686]"
+                      : "border-[#07373F] hover:border hover:bg-[#2C545B] hover:border-[#197686]"
+                  }`}
                 >
                   <div className="flex flex-col items-start">
                     <p className="text-base font-roboto">VIP ACCESS</p>
@@ -147,7 +160,11 @@ export default function MultiStepForm() {
                 <button
                   type="button"
                   onClick={() => setTicketType("VVIP ACCESS")}
-                  className="border-2 border-[#07373F] rounded-2xl flex flex-col-reverse gap-3 justify-between p-2 hover:border hover:bg-[#2C545B] hover:border-[#197686] cursor-pointer transition-all w-full md:w-[158px]"
+                  className={`border-2 rounded-2xl flex flex-col-reverse gap-3 justify-between p-2 cursor-pointer transition-all w-full md:w-[158px] ${
+                    ticketType === "VVIP ACCESS"
+                      ? "bg-[#12464E] border-[#197686]"
+                      : "border-[#07373F] hover:border hover:bg-[#2C545B] hover:border-[#197686]"
+                  }`}
                 >
                   <div className="flex flex-col items-start">
                     <p className="text-base font-roboto">VVIP ACCESS</p>
